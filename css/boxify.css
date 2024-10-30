@@ -1,0 +1,93 @@
+/* CSS for Boxify Plugin
+ * Written by Nimrod Tsabari
+ * Since Version 0.1b
+ */
+
+.boxify {
+	position: relative;
+	z-index: 20;
+}
+.boxify-container {
+	position: relative;
+	z-index: 10;
+}
+.boxify-background {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.boxify-clearfix:before, .boxify-clearfix:after { content: ""; display: table; }
+.boxify-clearfix:after { clear: both; }
+.boxify-clearfix { *zoom: 1; }
+
+/**** Themes *****/
+.boxify-theme-alert-box {
+	margin: 10px auto !important;
+}
+.boxify-theme-alert-background {
+	background-color: #d44 !important;
+}
+.boxify-theme-alert-container {
+	border: 1px solid #977 !important;
+	padding: 10px 20px 10px 50px !important;
+	background-image: url('../img/icon_alert.png');
+	background-repeat: no-repeat;
+	background-position: 15px 15px;
+	outline: 1px solid #922;
+	box-shadow: 0 0 10px #822 inset;
+}
+.boxify-theme-info-box {
+	margin: 10px auto !important;
+}
+.boxify-theme-info-background {
+	background-color: #8AD !important;
+}
+.boxify-theme-info-container {
+	border: 1px solid #BBD !important;
+	padding: 10px 20px 10px 50px !important;
+	background-image: url('../img/icon_info.png');
+	background-repeat: no-repeat;
+	background-position: 15px 15px;
+	outline: 1px solid #479;
+	box-shadow: 0 0 15px #68A inset;
+}
+.boxify-theme-strip-container {
+	padding: 20px !important;
+}
+.boxify-theme-strip-box h6 {
+	background-color: black;
+	text-align: center;
+	padding: 5px 0px;
+	margin: -20px -20px 10px;
+	color: white;
+}
+.boxify-theme-strip-box h6 span:only-of-type {
+	display: block;
+	margin: -5px 0;
+}
+
+.boxify-theme-check-box {
+	margin: 10px auto !important;
+}
+.boxify-theme-check-background {
+	background-color: #7B7 !important;
+}
+.boxify-theme-check-container {
+	border: 1px solid #9B9 !important;
+	padding: 10px 20px 10px 50px !important;
+	background-image: url('../img/icon_approve.png');
+	background-repeat: no-repeat;
+	background-position: 15px 15px;
+	outline: 1px solid #474;
+	box-shadow: 0 0 10px #282 inset;
+}
+
+@media only screen and (max-width: 480px) {
+	.boxify { 
+		width: 100% !important;
+		display: block !important; 
+	}	
+}

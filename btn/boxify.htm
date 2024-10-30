@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Add a Boxify Box</title>
+	<script type="text/javascript" src="js/tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
+<style type="text/css">
+	p { 
+		margin: 5px; 
+		padding: 5px;
+		border-bottom: 1px dashed #bbb;
+	}
+	p.title {
+		font-size: 18px;
+		border-bottom: 0px;
+		color: black;
+	}
+	p.title span {
+		font-size: 12px;
+		color: #07273E;
+	}
+	p.title a {
+		text-decoration: none;
+		border-bottom: 1px dashed #07273E;
+		font-size: 12px;
+		color: #07273E;
+	}
+	p.title a:hover {
+		border-bottom: 0px;
+	}
+	p.subtitle {
+		font-size: 14px;
+		background: white;
+		padding: 5px;
+		font-weight: bold;
+		margin: 10px 0;
+		border-bottom: 3px solid #f0f0f0;
+	}
+	p span.label {
+		width: 120px;
+		display: inline-block;
+	}
+	span.desc {
+		font-size: 11px;
+		padding: 5px 0;
+		color: #777;
+	}
+	input.boxify-but {
+		margin: 10px !important;
+		padding: 10px !important;
+		width: 150px !important;
+		height: auto !important;
+	}
+	.mceActionPanel {
+		text-align: center;
+	}
+	.block { display: block; }
+	.inline { display: inline-block; }
+</style>
+</head>
+<body>
+<form onsubmit="BoxifyDialog.insert();return false;" action="#">
+	<p class="title">Insert Boxify Box</p>
+	<p class="subtitle">Box Sizing and Positioning :</p>
+	<p>Use <input id="cols_use" name="cols_use" type="text" class="text" size="3" /> Out of <input id="cols" name="cols" type="text" class="text" size="3" /> Columns.
+	<span class="desc block">Divide into columns and decide how many to use.</span>	
+	</p>
+	<p>Position 
+		<select id="position" name="position">
+			<option value="none">None</option>
+			<option value="left">Left</option>
+			<option value="right">Right</option>
+		</select>
+	<span class="desc inline"> | Where to put the box ?</span>
+	</p>
+	<p>Order 
+		<select id="order" name="order">
+			<option value="none">None</option>
+			<option value="first">First</option>
+			<option value="last">Last</option>
+		</select>
+	<span class="desc inline"> | Is it the First/Last Box in an only boxes series??</span>
+	</p>
+	<p class="subtitle">Box Design :</p>
+	<p><span class="label">Box Spacing</span><input id="box_spacing" name="box_spacing" type="text" class="text" />
+		<span class="desc inline">(in pixels)</span>
+		<span class="desc block">Spacing between the Box and the elements around it.</span>
+	</p>
+	<p><span class="label">Padding</span><input id="padding" name="padding" type="text" class="text" />
+		<span class="desc inline">(in pixels)</span>
+		<span class="desc block">Spacing between the Box’s content and its edges.</span>
+	</p>
+	<p><span class="label">Background Color</span><input id="background_color" name="background_color" type="text" class="text" />
+		<span class="desc inline">(hex,rgba,colors)</span>
+		<span class="desc block">The Color of the background of the Box.</span>
+	</p>
+	<p><span class="label">Background Opacity</span><input id="background_opacity" name="background_opacity" type="text" class="text" />
+		<span class="desc inline">(0%-100%)</span>
+		<span class="desc block">How opaque would be the Box’s background.</span>
+	</p>
+	<p><span class="label">Border Width</span><input id="border_width" name="border_width" type="text" class="text" />
+		<span class="desc inline">(in pixels)</span>
+		<span class="desc block">The width of the Box’s border.</span>
+	</p>
+	<p><span class="label">Border Color</span><input id="border_color" name="border_color" type="text" class="text" />
+		<span class="desc inline">(hex,rgba,colors)</span>
+		<span class="desc block">The Color of the border.</span>
+	</p>
+	<p>Border Style
+		<select id="border_style" name="border_style">
+			<option value="solid">Solid</option>
+			<option value="dashed">Dashed</option>
+			<option value="dotted">Dotted</option>
+		</select>
+	</p>
+	<p><span class="label">Radius</span><input id="border_radius" name="border_radius" type="text" class="text" />
+		<span class="desc inline">(in pixels)</span>
+		<span class="desc block">The radius of the box's corners.</span>
+	</p>
+	<p><span class="label">Height</span><input id="height" name="height" type="text" class="text" />
+		<span class="desc inline">(in pixels)</span>
+	</p>
+	<p><span class="label">Width</span><input id="width" name="width" type="text" class="text" />
+		<span class="desc inline">(in pixels)</span>
+	</p>
+	<p><span class="label">Class</span><input id="class" name="boxify_class" type="text" class="text" />
+		<span class="desc block">Set an extra class for easy access using CSS.</span>
+	</p>
+	<p class="subtitle">Icon :</p>
+	<p><span class="label">Icon</span><input id="icon" name="icon" type="text" class="text" />
+		<span class="desc block">The Icon that will be used in that boxed.</span>	
+	</p>
+	<p><span class="label">Icon Position</span><input id="icon_position" name="icon_position" type="text" class="text" />
+		<span class="desc inline">(accepts 2 numbers - '0 0')</span>
+		<span class="desc block">The position of the Icon in relation to the Top Left corner.</span>
+	</p>
+	<p class="subtitle">Cross Post Box :</p>
+	<p><span class="label">Import</span><input id="import" name="import" type="text" class="text" />
+		<span class="desc inline">(accepts 'full' or 'content')</span>
+	</p>
+	<p><span class="label">Import Name</span><input id="import_name" name="import_name" type="text" class="text" />
+		<span class="desc block">Name of Box to Import.</span>
+	</p>
+	<p><span class="label">Import Post</span><input id="import_post" name="import_post" type="text" class="text" />
+		<span class="desc block">Source Box's Post ID.</span>
+	</p>
+	<div class="mceActionPanel">
+		<input class="boxify-but" type="button" id="insert" name="insert" value="Insert Shortcode" onclick="BoxifyDialog.insert();" />
+		<input class="boxify-but" type="button" id="cancel" name="cancel" value="Cancel" onclick="tinyMCEPopup.close();" />
+	</div>
+</form>
+
+</body>
+</html>

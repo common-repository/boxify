@@ -1,0 +1,86 @@
+/* CSS Action for Boxify's Admin Section
+ * Written by : Nimrod Tsabari | omniWP
+ * @ 07.08.2012
+ */
+
+.boxify-admin .half {
+	width: 40%;
+	box-sizing: border-box;
+	display: inline-block;
+	margin-left: 5%;
+	float: left;
+}
+.boxify-admin .right {
+	margin-bottom: 30px;
+}
+.boxify-admin .right p {
+	font-size: 14px;
+	font-weight: bold;
+}
+.boxify-admin .page_title {
+	font-size: 46px;
+	margin: 30px 0 20px 20px;
+}
+.boxify-admin .page_title span {
+	font-size: 32px;
+	color: #888;
+}
+.boxify-admin p.title {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 20px -10px 0 -10px;
+	background: #EEE;
+	padding: 5px;
+	border-top: 2px solid #ddd;
+}
+.boxify-admin p.instructions {
+	font-weight: 400;
+}
+.boxify-admin textarea#box_text {
+	display: block;
+	width: 100%;
+}
+.boxify-admin label {
+	width: 150px;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: bold;
+}
+.boxify-admin #styling li {
+	border-bottom: 1px dashed #bbb;
+	padding: 5px;
+	margin: 0;
+}
+.boxify-admin #styling li:nth-child(2n) {
+	background: #f4f4f4;
+}
+.boxify-admin #styling li span {
+	color: #555;
+	font-size: 11px;
+	display: block;
+}
+.boxify-admin div.shortcode {
+	border: 1px dotted #888;
+	padding: 10px;
+	margin-top: 10px;
+}
+.boxify-admin .inbox {
+	position: relative;
+	margin-top: 10px;
+	padding: 10px;
+}
+.boxify-admin .boxify {
+	max-width: 97%;
+	position: relative;
+	display: inline-block;
+}
+.boxify-admin .boxify-container {
+}
+.boxify-admin .boxify-background {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
